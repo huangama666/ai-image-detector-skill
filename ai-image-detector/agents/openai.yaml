@@ -1,0 +1,6 @@
+interface:
+  display_name: "AI Image Detector"
+  short_description: "检测图片是否为 AI 生成或合成"
+  default_prompt: "Use $ai-image-detector to check whether this image is AI-generated and produce a Chinese evidence report."
+policy:
+  allow_implicit_invocation: true
