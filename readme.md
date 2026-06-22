@@ -1,6 +1,8 @@
-# AI Image Detector Skill
+# AI Image Detector
 
-这是一个 Codex skill，用来检测图片是否存在 AI 生成或 AI 合成证据，并生成中文报告。
+这是一个面向 AI 工作台和 Agent 平台的图片检测工具，用来判断图片是否存在 AI 生成或 AI 合成证据，并生成中文报告。
+
+它可以作为 WorkBuddy、ZCode、Codex 或其他支持 `SKILL.md` / 脚本调用的 Agent 工具使用；也可以不接入任何平台，直接通过命令行运行。
 
 ## 能检测什么
 
@@ -16,16 +18,23 @@
 - **硬证据检测**：来自文件元数据、水印、内容凭证等可验证信息。
 - **视觉/内容判断**：来自画面风格、截图/压缩导致元数据丢失等人工判断理由。
 
-## 安装到 Codex
+## 接入到 Agent 平台
 
-把仓库根目录作为 skill 目录放到 Codex skills 目录下，例如：
+把仓库根目录作为一个工具/skill 目录放到你的平台技能目录中即可。以 Codex 本地目录为例：
 
 ```bash
 mkdir -p ~/.codex/skills/ai-image-detector
 cp -R . ~/.codex/skills/ai-image-detector/
 ```
 
-也可以直接从 GitHub 安装到 `~/.codex/skills/ai-image-detector`。
+如果你的平台是 WorkBuddy、ZCode 或其他 Agent 工作台，只需要保持仓库根目录结构不变：
+
+- `SKILL.md`
+- `agents/`
+- `scripts/`
+- `readme.md`
+
+然后把该目录注册为平台的图片检测工具。平台不支持 `SKILL.md` 也没关系，可以直接调用 `scripts/` 里的命令行检测器。
 
 ## 命令行使用
 
